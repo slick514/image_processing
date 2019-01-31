@@ -43,7 +43,7 @@ cv2.rectangle(canvas, (50, 200), (200, 225), red, 5)
 cv2.imshow("Canvas", canvas)
 # cv2.waitKey(0)
 
-# draw another rectangle, blue and filled in
+# draw another rectangle, blue and filled in ("-1")
 cv2.rectangle(canvas, (200, 50), (255, 125), blue, -1)
 cv2.imshow("Canvas", canvas)
 # cv2.waitKey(0)
@@ -70,10 +70,24 @@ for i in range(0, 25):
     pt = np.random.randint(0, high=300, size=(2,))
 
     # draw random circle
+    # "-1" at the end of arguments indicates solid color rather than line
     cv2.circle(canvas, tuple(pt), radius, color, -1)
 
 cv2.imshow("Canvas", canvas)
 cv2.waitKey(0)
 
 
+# **********************************
+# DRAWING ON EXISTING IMAGE
+# **********************************
 
+image = cv2.imread("../florida_trip.png")
+
+# we're going to draw an image around the face in the picture
+cv2.circle(image, (168, 188), 90, (0, 0, 255), 2)
+cv2.circle(image, (150, 164), 10, (0, 0, 255), -1)
+cv2.circle(image, (192, 174), 10, (0, 0, 255), -1)
+cv2.rectangle(image, (134, 200), (186,218), (0, 0, 255), -1)
+
+cv2.imshow("Output", image)
+cv2.waitKey(0)
