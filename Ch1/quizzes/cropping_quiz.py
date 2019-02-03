@@ -1,6 +1,6 @@
 import cv2
 
-# load the image and show it
+# load the image
 image = cv2.imread("florida_trip.png")
 
 i = image[173:235, 13:81]
