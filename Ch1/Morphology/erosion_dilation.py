@@ -1,9 +1,7 @@
 # import the necessary packages
-import argparse
 import cv2
 
 image = cv2.imread("../../images/pyimagesearch_logo.png")
-
 
 gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 cv2.imshow("Original", image)
